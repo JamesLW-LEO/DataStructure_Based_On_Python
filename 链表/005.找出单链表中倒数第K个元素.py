@@ -9,8 +9,8 @@ def findLastK(head, k):
         return
     slow = LNode()
     fast = LNode()
-    slow = slow.next
-    fast = fast.next
+    slow = head.next
+    fast = head.next
     i = 1
     while fast is not None:
         fast = fast.next
