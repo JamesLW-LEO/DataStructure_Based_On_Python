@@ -33,20 +33,3 @@ def printLinkList(root):
 # print(printLinkList(root))
 
 
-if __name__ == '__main__':
-    i = 1
-    head = student()
-    head.next = None
-    new_data = None
-    ptr = head
-    while i < 4:
-        new_data = student()
-        new_data.data = i
-        new_data.next = None
-        ptr.next = new_data
-        ptr = new_data
-        i += 1
-    ptr = head.next
-    while ptr != None:
-        print(ptr.data)
-        ptr = ptr.next
