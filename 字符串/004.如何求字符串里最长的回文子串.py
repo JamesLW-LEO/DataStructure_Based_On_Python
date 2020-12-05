@@ -68,6 +68,33 @@ class Test():
         print(historyRecord)
 
 
+import numpy as np
+
+
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        if len(s) <= 1:
+            return s
+        # 保存状态的矩阵
+        matrix = np.zeros((len(s), len(s)), dtype=bool)
+        max_len = 0  # 最长回文字符串的大小
+        loc = (0, 0)  # start,end 最长回文串的位置
+        # 动态规划求解
+        for j in range(0, len(s)):
+            for i in range(0, j + 1):
+                if s[i] == s[j] and (j - i < 2 or matrix[i + 1][j - 1]):
+                    matrix[i][j] = True
+                    if max_len < j - i + 1:
+                        max_len = j - i + 1  # 长度
+                        loc = (i, j)  # 位置
+
+        return s[loc[0]:loc[0] + max_len]
+
+
 if __name__ == '__main__':
     strs = 'abcdefgfedxyz'
     t = Test()
@@ -77,3 +104,6 @@ if __name__ == '__main__':
         while i < t.getStartIndex() + t.getLens():
             print(list(strs)[i], end='')
             i += 1
+    s = Solution()
+    res = s.longestPalindrome("ababe")
+    print(res)

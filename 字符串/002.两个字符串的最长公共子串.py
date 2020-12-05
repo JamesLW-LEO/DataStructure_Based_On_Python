@@ -1,3 +1,9 @@
+"""
+字符串 "abcdfg"  "abdfg"
+最长公共字串  "dfg"
+"""
+
+
 # 动态规划法
 def getMaxSubStr(s1, s2):
     m = [[0 for i in range(len(s2) + 1)] for j in range(len(s1) + 1)]
