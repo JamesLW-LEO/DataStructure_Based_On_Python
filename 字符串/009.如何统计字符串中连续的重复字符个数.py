@@ -17,18 +17,6 @@ def getMaxDupChar(s, startIndex, curMaxLen, maxLen):
         return getMaxDupChar(s, startIndex + 1, 1, max(curMaxLen, maxLen))
 
 
-def func(s):
-    maxLen = 0
-    curLen = 1
-    for i in range(1, len(s)):
-        if s[i - 1] == s[i]:
-            curLen += 1
-        else:
-            maxLen = curLen
-    return max(curLen, maxLen)
-
-
 if __name__ == '__main__':
     s = getMaxDupChar('abbabc', 0, 1, 1)
-    print(func('abbnbc'))
     print(s)
