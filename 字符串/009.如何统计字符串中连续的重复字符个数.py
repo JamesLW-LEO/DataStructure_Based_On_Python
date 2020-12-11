@@ -18,5 +18,5 @@ def getMaxDupChar(s, startIndex, curMaxLen, maxLen):
 
 
 if __name__ == '__main__':
-    s = getMaxDupChar('abbabc', 0, 1, 1)
+    s = getMaxDupChar('abbnnbc', 0, 1, 1)
     print(s)
